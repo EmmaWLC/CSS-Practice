@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        
+
+        *{
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+       
+        body {
+            height: 300vh;
+        }
+
+        /* navbar css */
+
+        @media screen and ( min-width: 0px){
+            nav .row .dark-bar, nav .nav-wrap .nav-links, nav .nav-btn{
+                display: none;
+            }
+
+            nav .nav-burger{
+                display: block;
+            }
+
+
+        }
+
+        @media screen and ( min-width: 992px){
+            nav .row .dark-bar, nav .nav-wrap .nav-links, nav .nav-btn{
+                display: block;
+            }
+
+            nav .nav-burger{
+                display: none;
+            }
+            
+        }
+
+        nav {
+            position: fixed;
+            top: 0px;
+            position: fixed;
+            width: 100%;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.13);
+            z-index: 1;
+            /* 如果不下這行要怎麼寫 */
+        }
+
+       
+
+        nav.white {
+            background-color: #fff;
+            height: 200px;
+        }
+
+  
+        .nav-wrap {
+            padding-left: calc(6%);
+            padding-right: calc(6%);
+            height: 80px;
+            background-color: #fff;
+            z-index: 1;
+        }
+
+        .dark-bar {
+            background-color: #000E2B;
+            width: 100%;
+            height: 40px;
+        }
+       
+
+        .banner-wrap {
+            padding-left: calc(6.5%);
+            /* padding-right: calc(6%); */
+        }
+
+        /* nav shopline logo */
+        .nav-shopline-logo {
+            width: 140px;
+            margin-left: -10px;
+        }
+
+        .nav-shopline-logo img{
+            width: 100%;
+
+        }
+
+        .nav-links-a{
+            font-size: .9rem;
+            color: #324354;
+            display: inline;
+            margin: 10px;
+            
+        }
+
+        .nav-links-a a, .nav-links-a i {
+            color: #324354;
+            text-decoration: none;
+        }
+
+        .nav-btn {
+            width: 100px;
+            height: 40px;
+            /* text-align: center; */
+            /* .nav-btn-a 中寫了d-flex上面的屬性就會無效嗎？ */
+            border-radius: 20px;
+            background-color: #0261FF;
+            padding: 3 12px;
+        }
+
+        .nav-btn-a {
+            width: 100%;
+            height: 100%;
+            
+        }
+
+        .nav-btn a{
+            text-decoration: none;
+            color: #fff;
+            font-size: .9rem;
+        }
+
+        .nav-burger a{
+            font-size: 25px;
+            color: #324354;
+            
+        }
+
+        .nav-burger i{
+            width: 100%;
+            color: #324354;
+        }
+
+
+        /* banner css */
+        section.banner {
+            background: #000E2B;
+            background-size: 100%;
+            margin-top: 80px;
+            padding-top: 80px;
+            width: 100%;
+        }
+        .banner-firstline{
+            color: #fff;
+        }
+        .banner-secondline {
+            color: #fff;
+            padding-bottom: calc(7%);
+        }
+        .banner-secondPart-content{
+            color: #fff;
+            font-size: 1rem;
+            padding-bottom: calc(7%);
+        }
+        .form-wrapper input{
+            width: 350px;
+            height: 45px;
+            background: unset;
+            /* 這是讓input沒有預設樣式的寫法 */
+            border: 1px solid #fff;
+            /* 為什麼這樣寫只有底部有線？ */
+            border-width: 0 0 1px;
+            padding: 0px 0px 10px 0px;
+            margin-right: 30px;
+        }
+        ::-webkit-input-placeholder{
+            color: #fff;
+            font-size: 1.1rem;
+
+        }
+        .form-btn {
+            width: 125px;
+            height: 45px;
+            border-radius: 20px;
+            background-color: #0261FF;
+        }
+        .form-btn a {
+            color: #fff;
+        }
+        .banner-img {
+            width: 90%;
+            padding-top: 35px;
+            
+        }
+        .banner-img img{
+            width:100%;
+        }
+
+
+
+        /* 單一平台 */
+        .intro-title {
+            width: 100%;
+            background-color: #fff;
+            text-align: center;
+            font-size: 17px;
+            margin: 0px 0px 70px;
+            line-height: 2rem;
+        }
+        .intro-title h2{
+            font-size: 35px;
+            font-weight: absolute;
+            margin: 80px 0px 30px;
+            line-height: 1.5em;
+        }
+
+        /* 免寫程式 圖文樣式 */
+        .intro-img-content-wrap {
+            width: 100%;
+            border-bottom: 1px solid rgb(184, 184, 184);
+            padding-bottom: 100px;
+            padding-top: 60px;
+        }
+
+        .intro-content {
+            width: 100%;
+        }
+
+        /* 免寫程式文字樣式 */
+        .intro-content-h3 h3{
+            font-size: 218.75%;
+            line-height: 3.5rem;
+            font-weight: bold;
+            margin: 0px 0px 50px 0px
+        }
+
+
+        /* 豐富版型 */
+        .intro-content-ul {
+            margin-top: 40px;
+            margin-bottom: calc(4%);
+        }
+        .intro-content-ul-p {
+            min-width: 200px;
+            margin-right: 20px;
+        }
+        /* 豐富版型勾圈圈 */
+        .intro-content-ul .icon-box{
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #DDECFF;
+            margin-right: 4px;
+           
+        }
+        /* 豐富版型勾勾 */
+        .intro-content-ul-set .fas.fa-check{
+            color: #055EFF;
+            font-size: 10px;
+
+        }
+        /* 看看開店祕技 */
+        .intro-btn-wrap i {
+            padding: 8px;
+        }
+
+        /* 圖片 */
+        .intro-img-wrap{
+            width: 100%;
+            height: auto;
+        }
+        .img-wrap img{
+            width: 100%;
+        }
+
+    
+
+
+/* 更多功能與服務 */
+
+        .home-features {
+            background-color: #F4F5F7;
+            padding: 70px 25px 25px;
+        }
+
+        .features-wrap h2 {
+            font-size: 35px;
+        }
+
+        .home-features h3 {
+            font-size: 125%;
+            text-align: center;
+            /* margin-bottom: 10px; */
+            font-weight: normal;
+        }
+
+        .li-1 {
+            padding: 40px;
+        }
+
+        
+
+        @media screen and ( min-width: 0px){
+            .li-1-p {
+                width: 200px;
+                margin: 0;
+                text-align: justify;
+                font-size: 16px;
+                line-height: 2rem;
+            }
+
+        }
+
+        @media screen and ( min-width: 1300px){
+            .li-1-p {
+                width: 300px;
+                margin: 0;
+                text-align: justify;
+                font-size: 93.75%;
+                line-height: 2rem;
+            }
+
+        }
+            
+
+        .features-list .img-wrap {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 12px rgb(36 50 66 / 20%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .features-list .img-wrap img {
+            width: 60%;
+            height: auto;
+        }
+
+
+        /* 人氣品牌推薦 */
+       
+
+        @media screen and ( min-width: 0px){
+
+            .home-showcase{
+                padding: 30px 35px 0px;
+            }
+            .showcase-title {
+                width: 100%;
+                margin: 0px 0px 30px;
+                font-size: 45px;
+            }
+            .showcase-img {
+                width: 100%;
+            } 
+
+            .showcase-img img{
+                width: 100%;
+                height: auto;
+                margin: 0px 0px 20px;
+            }
+
+            .showcase-content p{
+                padding: 30px 0px 10px;
+
+            }
+
+            .showcase-dots {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .showcase-dots-wrap{
+                width: 80%;
+                height: 150px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .dots{
+                width: calc(100% / 5);
+                background-color: rgb(255, 255, 255);
+            }
+
+
+            .dots.dots-blue p{
+                width: 12px;
+                height: 12px;
+                border-radius: 20px;
+                position: absolute;
+                transform: translateY(50%);
+                background-color: #0061FF;
+
+            }
+            .dots p{
+                width: 12px;
+                height: 12px;
+                border-radius: 20px;
+                position: absolute;
+                transform: translateY(50%);
+                background-color: #d6d6d6;
+            }
+
+            .showcase-brands-img{
+                display: none;
+            }
+
+        }
+
+
+        @media screen and ( min-width: 1300px){
+
+            .home-showcase{
+                padding: 70px 35px;
+            }
+            .showcase-title {
+                width: 100%;
+                margin: 0px 0px 45px;
+                font-size: 35px;
+            }
+
+            .showcase-brands-img{
+                display: block;
+                justify-content: space-between;
+                width: calc((100% - 80px) / 4);
+                margin: 0px 45px 20px;
+                padding: 40px 30px 0px;
+                
+            }
+
+            .showcase-list-wrap {
+                margin-top: 10px;
+                padding: 40px 0px 0px;
+                display: flex;
+                flex-direction: row-reverse;
+                border-top: 1px solid #E0E5E9;
+            }
+            .showcase-content {
+                width: 600px;
+            }
+
+
+
+            .showcase-img {
+                width: calc((100% - 75px) / 10 * 6);
+            }
+
+            .showcase-img img{
+                width: 100%;
+                
+            }
+
+            .showcase-dots, .showcase-dots-wrap{
+                display: none;
+            }
+
+            .showcase-content p {
+                width: 90%;
+            }
+
+          
+
+        }
+
+        .showcase-title h4{
+            font-size: 35px;
+        }
+        .showcase-title h4 span {
+            color: #0061FF;
+        }
+        .showcase-content-a i{
+            padding: 10px;
+        }
+
+
+
+        .footer-map {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background-position: -300px -35px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: url('./img/footer-map-bg.png') no-repeat -450px -55px/auto 360px #172B4D;
+        }
+
+        .footer-content{
+            padding: 60px;
+        }
+
+        .footer-map h4 {
+            font-size: 250%;
+            line-height: calc(10px + 2ex + 10px);
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .footer-map a {
+            font-size: 106.25%;
+            color: #fff;
+            width: 360px;
+            max-width: 100%;
+            background-color: #0061FF;
+            border-radius: 30px;
+            padding: 11px 0 8px;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+
+        
+
+        .footer-map h4 span:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 20px;
+            background-color: #0061FF;
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            z-index: -1;
+        }
+
+        .footer-content i {
+            margin-left: 100px;
+        }
+
+        .footer-list-wrap, .footer-bottom-wrap, .footer-lang-wrap {
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-bottom: 80px;
+        }
+
+        .footer-list-wrap {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 50px 0 80px;
+            border-width: 1px 0;
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .footer-revamp {
+            background-color: #00142D;
+            padding: 43px calc((100% - 1140px) / 2) 0;
+            color: #748094;
+            padding: 0;
+        }
+
+        .footer-list-wrap:after, .footer-list-wrap:before {
+            content: '';
+            width: calc(100% - (25px * 2));
+            height: 1px;
+            background: #172B4D;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 25px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 45px;
+            cursor: default;
+            padding: 0;
+            line-height: 1.2;
+            font-size: 106.25%;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .footer-revamp ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: white;
+        }
+        .footer-revamp ul li a{
+            color: white;
+        }
+
+
+
+        
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+    
+   <nav>
+       <div class="container-fluid">
+           <div class="row">
+               <div class="dark-bar">
+
+               </div>
+           </div>
+       </div>
+      
+        <div class="container-fluid">
+            <!-- 要問這個h-100為什麼不給會沒辦法置中 -->
+            <div class="row align-items-center nav-wrap">
+                <div class="nav-shopline-logo">
+                    <a href="#">
+                        <img src="./img/shopline_logo.png" alt="">
+                    </a>
+                </div>
+                <div class="nav-links ml-3">
+                    <div class="nav-links-a">
+                        <a href="#">開店服務</a>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="nav-links-a">
+                        <a href="#">方案費用</a> 
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="nav-links-a">
+                        <a href="#">客戶案例</a>
+                    </div>
+                    <div class="nav-links-a">
+                        <a href="#">開店說明會</a>
+                    </div>
+                    <div class="nav-links-a">
+                        <a href="#">開店諮詢</a>
+                    </div>
+                    <div class="nav-links-a">
+                        <a href="#">更多解決方案</a>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="nav-links-a">
+                        <a href="#">其他資源</a>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <div class="nav-btn ml-auto">
+                    <div class="nav-btn-a d-flex align-items-center justify-content-center">
+                        <a href="#">免費試用</a>
+                    </div>
+                </div>
+
+                <div class="nav-burger ml-auto">
+                    <a href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+
+            
+
+            </div>
+        </div>
+
+       
+        
+    </nav>
+
+    <section class='banner'>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="banner-wrap mt-n5 mt-lg-0 col-lg-6 col-12 d-flex align-items-center">
+                    <div class="banner-content mt-lg-n5 mt-3">
+                        <div class="banner-firstline">
+                            <h1>想在哪開店創業？</h1>
+                        </div>
+                        <div class="banner-secondline">
+                            <h1>網路開店一站式開賣
+                                <span class="bar">|</span>
+                            </h1>
+                        </div>
+
+                        <div class="banner-secondPart-content">
+                            <p>超過 25 萬品牌使用！從個人賣家到國際品牌，都能以 SHOPLINE 實現全通路零售，快速拓展市場到世界各地，輕鬆開始你的『 店 』商生意！</p>
+                        </div>
+                        
+                        <form class="form-wrapper d-flex align-items-top">
+                            <div class="form-input">
+                                <label>
+                                    <input class="input-email" type="email" placeholder="請在此輸入電子信箱 (可隨時更換)" required="">
+                                </label>
+
+                            </div>
+                            
+                            <div class="form-btn-bg">
+                                <div class="form-btn d-flex justify-content-center align-items-center">
+                                    <a href='#'class="banner-free-btn">免費試用</a>
+                                </div>
+
+                            </div>
+                            
+                            
+                        </form>
+                    </div>
+                </div>
+
+                <div class="d-flex d-lg-block col-lg-6 col-12 pb-5 justify-content-center">
+                    <div class="banner-img">
+                        <img src="./img/banner-img.png" alt="">
+                    </div>
+                </div>
+
+               
+
+               
+    
+            </div>
+
+        </div>
+       
+    </section>
+
+<!-- 單一平台就能幫你 -->
+    <section class='intro'>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="intro-title d-flex flex-column align-items-center justify-content-center">
+                    <div class="intro-h2">
+                        <h2>單一平台就能助你<br>在全通路輕鬆開店創業</h2>
+                    </div>
+                    <div class="intro-p">
+                        <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，<br>並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
+                    </div>
+                    
+                    
+                </div>
+
+    
+            </div>
+
+        </div>
+       
+    </section>
+
+<!-- 免寫程式多款版型 巧克力手工餅乾 -->
+    <section class='intro-img-content'>
+        <div class="container">
+            <div class="row flex-row-reverse intro-img-content-wrap">
+                <div class="intro-img-wrap d-flex col-lg-6 col-12 pt-lg-0 mb-3 align-items-center justify-content-center">
+                    <div class="img-wrap d-flex align-items-center justify-content-center">
+                        <img src="./img/intro-pic1.png" alt="免寫程式、多款版型 在全通路輕鬆開店創業">
+
+                    </div>
+                </div>
+                <div class="intro-content-wrap mt-5 mt-lg-0 col-lg-6 col-12 d-flex align-items-center">
+                    
+                    
+                    <div class="intro-content">
+                        <div class="intro-content-h3">
+                            <h3>免寫程式、多款版型<br>輕鬆打造全能電商網站</h3>
+                        </div>
+                        <div class="icons-wave">
+                            <i class="icons-wave"></i>
+                        </div>
+                        <div class="intro-content-secondp">
+                            <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
+                        </div>
+                        <div class="intro-content-ul">
+                            <div class="d-flex">
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>豐富版型主題與字型搭配</p>
+                                    </div>
+                                </div>
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>RWD 響應式網頁設計</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>獨有網址 ＆ SSL 安全憑證</p>
+                                    </div>
+                                </div>
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>SEO 搜尋引擎優化</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>一頁商店</p>
+                                    </div>
+                                </div>
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>開放 HTML／CSS 編輯</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                        <div class="intro-btn-wrap">
+                            <a href="/online-store-setup" class="hover-arrow-effect">看看開店祕技<i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 支持海內外電商 -->
+    <section class='intro-img-content'>
+        <div class="container">
+            <div class="row intro-img-content-wrap">
+                <div class="intro-img-wrap d-flex col-lg-6 col-12 pt-lg-0 mb-3 align-items-center justify-content-center">
+                    <div class="img-wrap d-flex align-items-center justify-content-center">
+                        <img src="./img/intro-pic2.png" alt="免寫程式、多款版型 在全通路輕鬆開店創業">
+
+                    </div>
+                </div>
+                <div class="intro-content-wrap mt-5 mt-lg-0 col-lg-6 col-12 d-flex align-items-center">
+                    
+                    
+                    <div class="intro-content">
+                        <div class="intro-content-h3">
+                            <h3>支持海內外電商<br>金流、物流一次搞定</h3>
+                        </div>
+                        <div class="icons-wave">
+                            <i class="icons-wave"></i>
+                        </div>
+                        <div class="intro-content-secondp">
+                            <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
+                        </div>
+                        <div class="intro-content-ul">
+                            <div class="d-flex">
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>線上信用卡刷卡</p>
+                                    </div>
+                                </div>
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>第三方金流／行動支付整合
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>超商代碼／條碼繳費</p>
+                                    </div>
+                                </div>
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>多溫層宅配並指定運費</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>超商／宅配貨到付款</p>
+                                    </div>
+                                </div>
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>了解更多金物流</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                        <div class="intro-btn-wrap">
+                            <a href="/online-store-setup" class="hover-arrow-effect">看看開店祕技<i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- 刺激下單 -->
+    <section class='intro-img-content'>
+        <div class="container">
+            <div class="row flex-row-reverse intro-img-content-wrap">
+                <div class="intro-img-wrap d-flex col-lg-6 col-12 pt-lg-0 mb-3 align-items-center justify-content-center">
+                    <div class="img-wrap d-flex align-items-center justify-content-center">
+                        <img src="./img/intro-pic3.png" alt="">
+
+                    </div>
+                </div>
+                <div class="intro-content-wrap mt-5 mt-lg-0 col-lg-6 col-12 d-flex align-items-center">
+                    
+                    <div class="intro-content">
+                        <div class="intro-content-h3">
+                            <h3>刺激下單，創造回購<br>行銷導流、促購模組任你玩</h3>
+                        </div>
+                        <div class="icons-wave">
+                            <i class="icons-wave"></i>
+                        </div>
+                        <div class="intro-content-secondp">
+                            <p>不多元優惠活動、會員集客機制、網紅分潤以及直播購物等豐富功能，將電商行銷玩法一網打盡，助你成功優化行銷活動成效，刺激顧客下單、吸引鐵粉回購！</p>
+                        </div>
+                        <div class="intro-content-ul">
+                            <div class="d-flex">
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>超過 20 種優惠促銷功能</p>
+                                    </div>
+                                </div>
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>社群直播購物系統</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>會員分級／點數／購物金</p>
+                                    </div>
+                                </div>
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>Facebook／Google／LINE 廣告追蹤</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>Instagram 購物功能</p>
+                                    </div>
+                                </div>
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>Facebook／LINE 對話式購物</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                        <div class="intro-btn-wrap">
+                            <a href="#" class="hover-arrow-effect">看更多優惠模組
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                   
+
+                
+
+               
+
+               
+    
+            </div>
+
+        </div>
+       
+    </section>
+<!-- o2o全通路 -->
+    <section class='intro-img-content'>
+        <div class="container">
+            <div class="row intro-img-content-wrap  border-bottom-0">
+                <div class="intro-img-wrap d-flex col-lg-6 col-12 pt-lg-0 mb-3 align-items-center justify-content-center">
+                    <div class="img-wrap d-flex align-items-center justify-content-center">
+                        <img src="./img/intro-pic4.png" alt="免寫程式、多款版型 在全通路輕鬆開店創業">
+
+                    </div>
+                </div>
+                <div class="intro-content-wrap mt-5 mt-lg-0 col-lg-6 col-12 d-flex align-items-center">
+                    
+                    
+                    <div class="intro-content">
+                        <div class="intro-content-h3">
+                            <h3>O2O 全通路無縫整併<br>輕鬆管理網店、門市以及其他通路</h3>
+                        </div>
+                        <div class="icons-wave">
+                            <i class="icons-wave"></i>
+                        </div>
+                        <div class="intro-content-secondp">
+                            <p>不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。</p>
+                        </div>
+                        <div class="intro-content-ul">
+                            <div class="d-flex">
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>門市 POS 系統</p>
+                                    </div>
+                                </div>
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>線上線下會員／商品／庫存整合
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>門市快速集客工具</p>
+                                    </div>
+                                </div>
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>O2O 即時銷售報表分析</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex">
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>進銷庫存／調撥／多店管理</p>
+                                    </div>
+                                </div>
+                                <div class="intro-content-ul-set d-flex">
+                                    <div class="icon">
+                                        <div class="icon-box d-flex justify-content-center align-items-center">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="intro-content-ul-p">
+                                        <p>串接 Shopee 蝦皮購物庫存</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                        <div class="intro-btn-wrap">
+                            <a href="/online-store-setup" class="hover-arrow-effect">了解更多全通路整合<i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- 更多功能 -->
+    <section class="home-features">
+        <div class="container">
+            <div class="row justify-content-center mt-5 mb-5">
+                <div class="features-wrap">
+                    <div class="features-wrap-h2 d-flex justify-content-center align-items-center mb-4">
+                        <h2>更多功能與服務</h2>
+                    </div>
+                    <div class="features-list d-flex col-4">
+                        <div class="li-1">
+                            <div class="img-wrap">
+                                <img class="lazy loaded" alt="強大庫存及訂單系統" data-ll-status="loaded" src="https://img.shoplineapp.com/media/image_clips/5efef5c3b774cf002ab000ce/original.png?1593767363">
+                            </div>
+                            <div class="li-1-h3">
+                                <h3>強大庫存及訂單系統</h3>
+                            </div>
+                            <div class="li-1-p">
+                                <p>從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
+                            </div>
+                        </div>
+                        <div class="li-1">
+                            <div class="img-wrap">
+                                <img class="lazy loaded" alt="即時化商店業績分析" data-ll-status="loaded" src="https://img.shoplineapp.com/media/image_clips/5efef5c4b774cf0027b00084/original.png?1593767364">
+                            </div>
+                            <div class="li-1-h3">
+                                <h3>即時化商店業績分析</h3>
+                            </div>
+                            <div class="li-1-p">
+                                <p>圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
+                            </div>
+                        </div>
+                        <div class="li-1">
+                            <div class="img-wrap">
+                                <img class="lazy loaded" alt="多國語系、幣值切換" data-ll-status="loaded" src="https://img.shoplineapp.com/media/image_clips/5f34a2e10225e00039a716b9/original.png?1597285089">
+                            </div>
+                            <div class="li-1-h3">
+                                <h3>多國語系、幣值切換</h3>
+                            </div>
+                            <div class="li-1-p">
+                                <p>想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="features-list d-flex col-4">
+                        <div class="li-1">
+                            <div class="img-wrap">
+                                <img class="lazy loaded" alt="專業顧問線上支援" data-ll-status="loaded" src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c4003c7aace6/original.png?1597285089">
+                            </div>
+                            <div class="li-1-h3">
+                                <h3>專業顧問線上支援</h3>
+                            </div>
+                            <div class="li-1-p">
+                                <p>迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
+                            </div>
+                        </div>
+                        <div class="li-1">
+                            <div class="img-wrap">
+                                <img class="lazy loaded" alt="廣告行銷加值服務" data-ll-status="loaded" src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c472e47aa8e9/original.png?1597285089">
+                            </div>
+                            <div class="li-1-h3">
+                                <h3>廣告行銷加值服務</h3>
+                            </div>
+                            <div class="li-1-p">
+                                <p>由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
+                            </div>
+                        </div>
+                        <div class="li-1">
+                            <div class="img-wrap">
+                                <img class="lazy loaded" alt="老闆專屬成長社群" data-ll-status="loaded" src="https://img.shoplineapp.com/media/image_clips/5f34a2e16200760045e6138f/original.png?1597285089">
+                            </div>
+                            <div class="li-1-h3">
+                                <h3>老闆專屬成長社群</h3>
+                            </div>
+                            <div class="li-1-p">
+                                <p>致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+<!-- 人氣品牌推薦 -->
+    <section class="home-showcase">
+        <div class="container-fluid">
+            <div class="row px-5 justify-content-center align-items-center">
+                <!-- 人氣品牌一致推薦 -->
+                <div class="showcase-title d-flex justify-content-center">
+                    <h4><span>人氣品牌</span>一致推薦使用</h4>
+                </div>
+                <!-- 人氣品牌個品牌圖片 -->
+                <div class="showcase-brands px-5 d-flex">
+                    <div class="showcase-brands-img">
+                        <img src="./img/bonny-logo.png" alt="">
+                    </div>
+                    <div class="showcase-brands-img">
+                        <img src="./img/yuan-logo.png" alt="">
+                    </div>
+                    <div class="showcase-brands-img">
+                        <img src="./img/snatch-logo.png" alt="">
+                    </div>
+                    <div class="showcase-brands-img">
+                        <img src="./img/excelsior-logo.png" alt="">
+                    </div>
+                    <div class="showcase-brands-img">
+                        <img src="./img/light-logo.png" alt="">
+                    </div>
+                    
+                    
+                </div>
+                <!-- bonny圖文 -->
+                <div class="showcase-list-wrap">
+                    <div class="showcase-img">
+                        <img src="./img/showcase-bonny.jpg" alt="">
+                    </div>
+                    <div class="showcase-content">
+                        <div class="showcase-content-a">
+                            <a class="hover-arrow-effect" href="https://www.bonnyread.com.tw/" target="_blank">bonnyread.com.tw<i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <p>SHOPLINE 在行動裝置上操作的順暢度很高；使用者給的建議與意見會採納，處理的速度也不錯；還一直有新功能推出，不斷成長。</p>
+                        <span>- BONNY &amp; READ 店長, Stan</span>
+                    </div>
+                    <div class="showcase-dots">
+                        <div class="showcase-dots-wrap justify-content-center align-items-center">
+                            <div class="dots dots-blue d-flex justify-content-center align-items-center">
+                                <p></p>
+                            </div>
+                            <div class="dots d-flex justify-content-center align-items-center">
+                                <p></p>
+                            </div>
+                            <div class="dots d-flex justify-content-center align-items-center">
+                                <p></p>
+                            </div>
+                            <div class="dots d-flex justify-content-center align-items-center">
+                                <p></p>
+                            </div>
+                            <div class="dots d-flex justify-content-center align-items-center">
+                                <p></p>
+                            </div>
+                        </div>
+
+                    </div>
+                   
+                    
+
+                </div>
+               
+            </div>
+        </div>
+        
+    </section>
+<!-- 全亞洲 -->
+
+<footer class="footer-revamp">
+    <div class="footer-map">
+      <div class="footer-content">
+        <h4>全亞洲超過<br><span class="count-animate">250,000</span> 個品牌都在使用 SHOPLINE</h4>
+        <a href="#"><span>免費試用 14 天</span><i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="footer-map-img">
+        
+      </div>
+    </div>
+    <div class="footer-list-wrap">
+      <div class="footer-col">
+        <h4>SHOPLINE</h4>
+        <ul class="footer-nav">
+          <li class="nav-item"><a class="nav-link" href="/about">關於我們</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/team">認識團隊</a></li>
+          <li class="nav-item"><a class="nav-link" href="/careers">人才招募</a></li>
+          <li class="nav-item"><a class="nav-link" href="/cooperate">合作機會</a></li>
+          <li class="nav-item"><a class="nav-link" href="/selectedpartners">精選夥伴</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/press">媒體報導</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>我要開店</h4>
+        <ul class="footer-nav">
+          <li class="nav-item"><a class="nav-link" href="/about/pricing">方案費用</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/pricing/module">功能模組</a></li>
+          <li class="nav-item"><a class="nav-link" href="/showcase">客戶案例</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://seminar.shopline.tw" target="_blank">開店說明會</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://consultation.shopline.tw" target="_blank">開店諮詢</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>功能特色</h4>
+        <ul class="footer-nav">
+          <li class="nav-item"><a href="/features/online-store" class="nav-link">網路開店</a></li>
+          <li class="nav-item"><a href="/social-commerce/features" class="nav-link">社群購物</a></li>
+          <li class="nav-item"><a class="nav-link" href="/pos/features">零售 POS</a></li>
+          <li class="nav-item"><a class="nav-link" href="/features/logistics">電商物流</a></li>
+          <li class="nav-item"><a class="nav-link" href="/features/order-management">訂單管理</a></li>
+          <li class="nav-item"><a class="nav-link" href="/features/landing-page">一頁商店</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>開店資源</h4>
+        <ul class="footer-nav">
+          <li class="nav-item"><a class="nav-link" href="/online-store-setup">開店秘技</a></li>
+          <li class="nav-item"><a class="nav-link" href="/templates">版型主題</a></li>
+          <li class="nav-item"><a class="nav-link" href="/faq/overview">新手問答</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://pos.shopline.tw/functioncase/hardware/" target="_blank">POS 硬體</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>更多解決方案</h4>
+        <ul class="footer-nav">
+          <li class="nav-item"><a class="nav-link" href="/enterprise">企業旗艦方案</a></li>
+          <li class="nav-item"><a class="nav-link" href="/cross-border">跨境電商方案</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://marketing.shoplineapp.com/?utm_source=shopline&amp;utm_medium=shopline-footer&amp;utm_campaign=ads-project" target="_blank">廣告計畫方案</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>其他資源</h4>
+        <ul class="footer-nav">
+          <li class="nav-item"><a class="nav-link" href="#" target="_blank">電商教室</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" target="_blank">充電工作坊</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" target="_blank">DreamBig 創品牌</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" target="_blank">電商成長學苑</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" target="_blank">LINE 官方帳號</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>應用案例</h4>
+        <ul class="footer-nav">
+          <li class="nav-item is-hidden"><a class="nav-link">金流與物流</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://consultation.shopline.tw/pos" target="_blank">實體零售</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://marketing.shopline.tw/o2o-plan" target="_blank">O2O 全通路</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://marketing.shopline.tw/social-commerce" target="_blank">社交商務</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://marketing.shopline.tw/facebook-integration-features" target="_blank">社群電商工具包</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-full">
+        <div class="covid-19-wrap">
+          <a href="https://marketing.shopline.tw/covid-19-response" target="_blank">COVID-19 應變措施</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom-wrap">
+      <div class="footer-siteinfo footer-siteinfo-link">
+        <ul class="nav nav-siteinfo">
+          <li class="nav-item"><a class="nav-link" href="/about/sitemap">網站地圖</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/privacy">隱私權政策</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about/terms">會員條款</a></li>
+        </ul>
+      </div>
+      <div class="footer-siteinfo footer-siteinfo-social">
+        <div class="button-group">
+          <a href="https://www.facebook.com/shopline.tw" target="_blank">
+            <div class="icons-facebook"></div>
+          </a>
+          <a href="https://www.linkedin.com/company/shopline" target="_blank">
+            <div class="icons-linkedin"></div>
+          </a>
+          <a href="https://www.instagram.com/shopline_tw/" target="_blank">
+            <div class="icons-instagram"></div>
+          </a>
+          <a href="https://www.youtube.com/c/shoplineglobalsmartcommerceenabler" target="_blank">
+            <div class="icons-youtube"></div>
+          </a><br>
+          <a href="https://line.me/R/ti/p/%40prs5793t" target="_blank">
+            <div class="icons-brand"></div>
+          </a>
+          <a href="mailto: support@shoplineapp.com">
+            <div class="icons-mail"></div>
+          </a>
+        </div>
+      </div>
+      <div class="footer-siteinfo footer-siteinfo-copyright">
+        <div class="copyright">服務時間 星期一至五 上午 10 點至晚上 7 點<br>© Copyright 2013-21 SHOPLINE Limited.</div>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+
+
+    
+    
+    
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    
+</body>
+</html>
