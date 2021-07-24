@@ -15,13 +15,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
     <style>
-        
+
 
         *{
             font-family: 'Noto Sans TC', sans-serif;
         }
 
-       
+
         body {
             height: 300vh;
             font-size: 1rem;
@@ -45,7 +45,7 @@
 
 
         }
-  
+
 
         @media screen and ( min-width: 992px){
             nav .row .dark-bar, nav .nav-wrap .nav-links, nav .nav-btn{
@@ -86,18 +86,18 @@
             position: fixed;
             width: 100%;
             box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.13);
-            z-index: 1;
+            z-index: 5;
             /* 如果不下這行要怎麼寫 */
         }
 
-       
+
 
         nav.white {
             background-color: #fff;
             height: 200px;
         }
 
-  
+
         .nav-wrap {
             height: 80px;
             background-color: #fff;
@@ -109,17 +109,17 @@
             width: 100%;
             height: 40px;
         }
-       
+
 
         .banner-wrap {
-            padding-left: calc(6.5%);
-            /* padding-right: calc(6%); */
+            padding-left: calc(2.5%);
+
         }
 
         /* nav shopline logo */
         .nav-shopline-logo {
             width: 140px;
-       
+
         }
 
         .nav-shopline-logo img{
@@ -131,7 +131,7 @@
             color: #324354;
             display: inline;
             margin: 10px;
-            
+
         }
 
         .nav-links-a a, .nav-links-a i {
@@ -152,7 +152,7 @@
         .nav-btn-a {
             width: 100%;
             height: 100%;
-            
+
         }
 
         .nav-btn a{
@@ -164,7 +164,7 @@
         .nav-burger a{
             font-size: 25px;
             color: #324354;
-            
+
         }
 
         .nav-burger i{
@@ -175,14 +175,25 @@
 
         /* banner css */
         section.banner {
-            background: #000E2B;
-            background-size: 100%;
+            background-image: url(./img/banner-bg.png);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
             margin-top: 80px;
             padding-top: 80px;
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+
+        }
+
+        .banner-content {
             width: 100%;
         }
         .banner-firstline{
             color: #fff;
+
         }
         .banner-secondline {
             color: #fff;
@@ -193,57 +204,201 @@
             font-size: 1rem;
             padding-bottom: calc(7%);
         }
-        .form-wrapper input{
-            width: 350px;
-            height: 45px;
-            background: unset;
-            /* 這是讓input沒有預設樣式的寫法 */
-            border: 1px solid #fff;
-            /* 為什麼這樣寫只有底部有線？ */
-            border-width: 0 0 1px;
-            padding: 0px 0px 10px 0px;
-            margin-right: 30px;
-        }
-        ::-webkit-input-placeholder{
-            color: #fff;
-            font-size: 1.1rem;
 
-        }
-        .form-btn {
-            width: 125px;
-            height: 45px;
-            border-radius: 20px;
-            background-color: #0261FF;
-        }
-        .form-btn a {
-            color: #fff;
-        }
         .banner-img {
             width: 90%;
             padding-top: 35px;
-            
         }
+
         .banner-img img{
             width:100%;
         }
 
 
 
+
+
+        @media screen and (min-width:0px){
+            section.banner {
+                padding: 0px 30px 40px;
+            }
+            .banner-content h1{
+                font-size: 178%;
+                text-align: center;
+            }
+            .form-wrapper {
+                width: 100%;
+            }
+            .form-input {
+                width: 100%;
+            }
+            .form-wrapper input{
+                width: calc(100vw - 90px);
+                background: unset;
+                /* 這是讓input沒有預設樣式的寫法 */
+                border: 1px solid #fff;
+                border-width: 0 0 1px;
+                padding: 0px 0px 10px 0px;
+
+            }
+            ::-webkit-input-placeholder{
+                color: #fff;
+                font-size: 1.1rem;
+            }
+
+            .form-btn-bg {
+                width: 100%;
+                height: 45px;
+                border-radius: 20px;
+                background-color: #0261FF;
+                margin-top: 20px;
+            }
+            .form-btn a {
+                color: #fff;
+            }
+
+
+        }
+        @media screen and (min-width: 992px){
+            section.banner {
+                margin-top: 80px;
+                padding-top: 80px;
+                width: 100%;
+                height: 700px;
+            }
+
+            .banner-content h1{
+                font-size: 250%;
+                text-align: left;
+            }
+            .form-wrapper{
+                width: 100%;
+                justify-content: space-between;
+
+
+            }
+            .form-input {
+                width: 100%;
+            }
+
+
+            .form-input input{
+                width: calc(50vw - 80px);
+                background: unset;
+                /* 這是讓input沒有預設樣式的寫法 */
+                border: 1px solid #fff;
+                border-width: 0 0 1px;
+                padding: 0px 0px 10px 0px;
+
+            }
+
+            .form-btn-bg {
+                width: 100%;
+                height: 45px;
+                border-radius: 20px;
+                background-color: #0261FF;
+                margin: 20px auto 0;
+                padding: 1px 6px;
+            }
+            .form-btn a {
+                color: #fff;
+            }
+
+        }
+
+        @media screen and (min-width: 1201px){
+
+            .banner-wrap{
+                padding-right: 50px;
+            }
+            .form-btn-bg {
+                width: 125px;
+                height: 45px;
+                border-radius: 20px;
+                background-color: #0261FF;
+                margin: 0px 0px 0px 15px;
+                padding: 1px 6px;
+            }
+
+            .form-input {
+                width: 50%;
+            }
+
+            .form-wrapper input{
+                width: 350px;
+                background: unset;
+                border: 1px solid #fff;
+                border-width: 0 0 1px;
+                padding: 8px 16px 8px 0px;
+            }
+            .form-btn-bg {
+
+                margin: 0px 0px 0px;
+
+            }
+            .form-btn a {
+                color: #fff;
+            }
+        }
+
+
+
+
+
+
+
         /* 單一平台 */
-        .intro-title {
-            width: 100%;
-            background-color: #fff;
-            text-align: center;
-            font-size: 17px;
-            margin: 0px 0px 70px;
-            line-height: 2rem;
+
+        @media screen and ( min-width:0px){
+            .intro-title {
+                width: 100%;
+                background-color: #fff;
+                text-align: center;
+                font-size: 106%;
+                margin: 0px 0px 0px;
+                line-height: 2rem;
+                padding: 60px 20px 0px;
+            }
+            .intro-p br{
+                display: none;
+            }
+            .intro-title h2{
+                font-size: 25px;
+                font-weight: absolute;
+                margin: 0px 0px 30px;
+                line-height: 1.5em;
+            }
+
         }
-        .intro-title h2{
-            font-size: 35px;
-            font-weight: absolute;
-            margin: 80px 0px 30px;
-            line-height: 1.5em;
+        @media screen and ( min-width:560px){
+
+            .intro-p br{
+                display: inline;
+            }
+
         }
+
+        @media screen and ( min-width:992px){
+            .intro-title {
+                width: 100%;
+                background-color: #fff;
+                text-align: center;
+                font-size: 17px;
+                margin: 0px 0px 70px;
+                line-height: 2rem;
+            }
+            .intro-p br{
+                display: inline;
+            }
+            .intro-title h2{
+                font-size: 35px;
+                font-weight: absolute;
+                margin: 80px 0px 30px;
+                line-height: 1.5em;
+            }
+
+        }
+
 
         /* 免寫程式 圖文樣式 */
         .intro-img-content-wrap {
@@ -282,7 +437,7 @@
             border-radius: 50%;
             background-color: #DDECFF;
             margin-right: 4px;
-           
+
         }
         /* 豐富版型勾勾 */
         .intro-content-ul .fas.fa-check{
@@ -304,7 +459,7 @@
             width: 100%;
         }
 
-    
+
 
 
 /* 更多功能與服務 */
@@ -329,7 +484,7 @@
             padding: 40px;
         }
 
-        
+
 
         @media screen and ( min-width: 0px){
             .li-1-p {
@@ -355,8 +510,8 @@
                 margin: 0px;
             }
 
-           
-            
+
+
         }
 
         @media screen and ( min-width: 992px){
@@ -374,7 +529,7 @@
             width: 100%;
             /* margin: 0px -30px 0px 0px; */
         }
-            
+
 
         .features-list .img-wrap {
             width: 120px;
@@ -395,7 +550,7 @@
 
 
         /* 人氣品牌推薦 */
-       
+
 
         @media screen and ( min-width: 0px){
 
@@ -409,7 +564,7 @@
             }
             .showcase-img {
                 width: 100%;
-            } 
+            }
 
             .showcase-img img{
                 width: 100%;
@@ -485,7 +640,7 @@
                 /* width: calc((100% - 80px) / 4);
                 margin: 0px 45px 20px;
                 padding: 40px 30px 0px; */
-                
+
             }
 
             .showcase-list-wrap {
@@ -507,7 +662,7 @@
 
             .showcase-img img{
                 width: 100%;
-                
+
             }
 
             .showcase-dots, .showcase-dots-wrap{
@@ -518,7 +673,7 @@
                 width: 90%;
             }
 
-          
+
 
         }
 
@@ -532,124 +687,277 @@
             padding: 10px;
         }
 
+        @media screen and ( min-width:0px){
+            footer {
+                padding: 2rem 0;
+                position: relative;
+                width: 100%;
+                padding: 43px 0 93px 0;
+                background-color: #333f48;
+            }
+            footer h4 {
+                color: white;
+            }
+            .footer-revamp {
+                background-color: #00142D;
+                padding: 43px calc((100% - 1140px) / 2) 0;
+                color: #748094;
+                padding: 0;
+            }
+            .footer-revamp {
+                font-size: 16px;
+            }
+            .footer-map {
+                min-height: 400px;
+                padding: 0 0 250px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                background: url(./img/footer-map-bg.png) no-repeat -450px -55px/auto 360px #172B4D;
+                z-index:0;
+
+            }
+
+            .footer-map .footer-content {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: calc(2.5rem + 50px);
+                width: 100%;
+            }
 
 
-        .footer-map {
-            padding-top: 50px;
-            padding-bottom: 50px;
-            background-position: -300px -35px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            background: url('./img/footer-map-bg.png') no-repeat -450px -55px/auto 360px #172B4D;
+            .footer-map h4 {
+                font-size: 250%;
+                line-height: calc(10px + 2ex + 10px);
+                margin-bottom: 50px;
+                z-index: 0;
+            }
+
+            .footer-map span.count-animate {
+                position: relative;
+            }
+
+            .footer-map span.count-animate:after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 20px;
+                background-color: #0061FF;
+                position: absolute;
+                bottom: 15px;
+                left: 0;
+                z-index: -1;
+
+
+            }
+
+            .footer-map a {
+                font-size: 106.25%;
+                color: #fff;
+                width: 360px;
+                max-width: 100%;
+                background-color: #0061FF;
+                border-radius: 30px;
+                padding: 11px 0 11px;
+                position: relative;
+                display: inline-block;
+                text-align: center;
+                z-index: 1;
+            }
+
+
+            .footer-map i {
+                font-size: 106.25%;
+                color: #fff;
+                position: relative;
+                transform: translateX(80px);
+
+            }
+
+            .footer-map-img {
+                width: 615px;
+                position: absolute;
+                right: -130px;
+                bottom: 0;
+                pointer-events: none;
+
+            }
+
+            .footer-map-img img{
+                width: 100%;
+            }
+
+            .footer-list-wrap, .footer-bottom-wrap, .footer-lang-wrap {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-bottom: 0;
+            }
+
+            .footer-list-wrap {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding: 50px 20px 0px;
+                border-width: 1px 0;
+                margin-bottom: 0;
+                position: relative;
+            }
+            .footer-list-wrap:before {
+                top: 50px;
+
+            }
+            .footer-list-wrap:before {
+                content: '';
+                width: calc(100% - (25px * 2));
+                height: 1px;
+                background: #172B4D;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 25px;
+            }
+            .footer-col:not(.footer-siteinfo):not(.footer-col-full) {
+                border-bottom: 1px solid #172B4D;
+                position: relative;
+                min-width: 100%;
+            }
+            .footer-col h4 {
+                font-size: 106.25%;
+                color: #fff;
+                margin-bottom: 0;
+                cursor: pointer;
+                padding: 20px 0 19px;
+                line-height: 1;
+                font-weight: 300;
+            }
+            .footer-revamp ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .footer-col .nav-item {
+                display: none;
+            }
+
+            .covid-19-wrap a {
+                display: inline-block;
+                width: 225px;
+                text-align: center;
+                background-color: #dbf8ed;
+                padding: 5px 0;
+                color: #000;
+                position: relative;
+                -webkit-animation: bt_move 5s ease infinite;
+                animation: bt_move 5s ease infinite;
+            }
+            .footer-col-full {
+                width: 100%;
+                text-align: left;
+                margin-top: 90px;
+            }
+
+            .footer-bottom-wrap {
+                display: flex;
+                justify-content: space-between;
+                align-items: left;
+                flex-direction: column;
+                color: #fff;
+                margin-bottom: 95px;
+            }
+            .footer-siteinfo .button-group {
+                margin-bottom: 0;
+                width: auto;
+            }
+            .button-group {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+            }
+
+            .footer-siteinfo {
+                font-size: 87.5%;
+                line-height: 1.7;
+                text-align: center;
+                margin-top: 25px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .footer-siteinfo .button-group a {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                margin-left: 15px;
+                background-color: #172B4D;
+                text-align: center;
+                font-size: 120%;
+                margin-bottom: 10px;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .footer-siteinfo .button-group a:nth-child(1){
+                margin-left: 0px;
+
+            }
+            .footer-siteinfo .nav-siteinfo {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            .footer-siteinfo .nav-siteinfo li {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                /* padding: 7px 0; */
+                position: relative;
+                border: 0;
+                /* width: 100%;
+                justify-content: center; */
+                padding: 0 30px;
+                width: auto;
+                justify-content: unset;
+            }
+
+            .footer-siteinfo .nav-siteinfo li:nth-child(1) {
+                
+                padding: 0px 30px 0px 0px;
+                
+            }
+            .footer-siteinfo .nav-siteinfo a{
+                color: white;
+                padding: 0px 0px 0px 0px;
+                
+            }
+            .footer-siteinfo .nav-siteinfo li+li:before {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 16px;
+                background-color: #748094;
+                position: absolute;
+                top: calc(50% + 1px);
+                left: 0px;
+                transform: translateY(-50%);
+            }
+            .footer-bottom-wrap {
+                
+                flex-direction: column;
+                color: #fff;
+                margin-bottom: 95px;
+            }
         }
 
-        .footer-content{
-            padding: 60px;
-        }
-
-        .footer-map h4 {
-            font-size: 250%;
-            line-height: calc(10px + 2ex + 10px);
-            margin-bottom: 50px;
-            color: white;
-        }
-
-        .footer-map a {
-            font-size: 106.25%;
-            color: #fff;
-            width: 360px;
-            max-width: 100%;
-            background-color: #0061FF;
-            border-radius: 30px;
-            padding: 11px 0 8px;
-            position: relative;
-            display: inline-block;
-            text-align: center;
-        }
-
-        
-
-        .footer-map h4 span:after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 20px;
-            background-color: #0061FF;
-            position: absolute;
-            bottom: 15px;
-            left: 0;
-            z-index: -1;
-        }
-
-        .footer-content i {
-            margin-left: 100px;
-        }
-
-        .footer-list-wrap, .footer-bottom-wrap, .footer-lang-wrap {
-            padding-left: 25px;
-            padding-right: 25px;
-            padding-bottom: 80px;
-        }
-
-        .footer-list-wrap {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 50px 0 80px;
-            border-width: 1px 0;
-            margin-bottom: 0;
-            position: relative;
-        }
-
-        .footer-revamp {
-            background-color: #00142D;
-            padding: 43px calc((100% - 1140px) / 2) 0;
-            color: #748094;
-            padding: 0;
-        }
-
-        .footer-list-wrap:after, .footer-list-wrap:before {
-            content: '';
-            width: calc(100% - (25px * 2));
-            height: 1px;
-            background: #172B4D;
-            display: block;
-            position: absolute;
-            bottom: 0;
-            left: 25px;
-        }
-
-        .footer-col h4 {
-            margin-bottom: 45px;
-            cursor: default;
-            padding: 0;
-            line-height: 1.2;
-            font-size: 106.25%;
-            color: #fff;
-            font-weight: 500;
-        }
-
-        .footer-revamp ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            color: white;
-        }
-        .footer-revamp ul li a{
-            color: white;
-        }
-        .footer-map-img{
-            width: 615px;
-            position: absolute;
-            z-index: -1;
-            right: -300px;
-            bottom: 0;
-            pointer-events: none;
-        }
+       
 
 
-        
+
+
+
+
 
 
 
@@ -659,7 +967,7 @@
 </head>
 <body>
 
-    
+
    <nav>
        <div class="container-fluid">
            <div class="row">
@@ -668,7 +976,7 @@
                </div>
            </div>
        </div>
-      
+
         <div class="container-fluid">
             <!-- 要問這個h-100為什麼不給會沒辦法置中 -->
             <div class="row align-items-center nav-wrap">
@@ -683,7 +991,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="nav-links-a">
-                        <a href="#">方案費用</a> 
+                        <a href="#">方案費用</a>
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="nav-links-a">
@@ -717,18 +1025,23 @@
                     </a>
                 </div>
 
-            
+
 
             </div>
         </div>
 
-       
-        
+
+
     </nav>
 
     <section class='banner'>
         <div class="container-fluid">
-            <div class="row">
+            <div class="row d-flex flex-row-reverse flex-wrap justify-content-between align-items-center">
+                <div class="d-flex d-lg-block col-lg-6 col-12 pb-5 justify-content-center">
+                    <div class="banner-img">
+                        <img src="./img/banner-img.png" alt="">
+                    </div>
+                </div>
                 <div class="banner-wrap mt-n5 mt-lg-0 col-lg-6 col-12 d-flex align-items-center">
                     <div class="banner-content mt-lg-n5 mt-3">
                         <div class="banner-firstline">
@@ -743,41 +1056,30 @@
                         <div class="banner-secondPart-content">
                             <p>超過 25 萬品牌使用！從個人賣家到國際品牌，都能以 SHOPLINE 實現全通路零售，快速拓展市場到世界各地，輕鬆開始你的『 店 』商生意！</p>
                         </div>
-                        
-                        <form class="form-wrapper d-flex align-items-top">
+
+                        <form class="form-wrapper d-flex flex-wrap align-items-center">
                             <div class="form-input">
                                 <label>
                                     <input class="input-email" type="email" placeholder="請在此輸入電子信箱 (可隨時更換)" required="">
                                 </label>
 
                             </div>
-                            
-                            <div class="form-btn-bg">
-                                <div class="form-btn d-flex justify-content-center align-items-center">
+
+                            <div class="form-btn-bg d-flex justify-content-center align-items-center">
+                                <div class="form-btn">
                                     <a href='#'class="banner-free-btn">免費試用</a>
                                 </div>
 
                             </div>
-                            
-                            
+
+
                         </form>
                     </div>
                 </div>
-
-                <div class="d-flex d-lg-block col-lg-6 col-12 pb-5 justify-content-center">
-                    <div class="banner-img">
-                        <img src="./img/banner-img.png" alt="">
-                    </div>
-                </div>
-
-               
-
-               
-    
             </div>
 
         </div>
-       
+
     </section>
 
 <!-- 單一平台就能幫你 -->
@@ -789,17 +1091,17 @@
                         <h2>單一平台就能助你<br>在全通路輕鬆開店創業</h2>
                     </div>
                     <div class="intro-p">
-                        <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，<br>並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
+                        <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業<br>並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
                     </div>
-                    
-                    
+
+
                 </div>
 
-    
+
             </div>
 
         </div>
-       
+
     </section>
 
 <!-- 免寫程式多款版型 巧克力手工餅乾 -->
@@ -813,8 +1115,8 @@
                     </div>
                 </div>
                 <div class="intro-content-wrap mt-5 mt-lg-0 col-lg-6 col-12 d-flex align-items-center">
-                    
-                    
+
+
                     <div class="intro-content">
                         <div class="intro-content-h3">
                             <h3>免寫程式、多款版型<br>輕鬆打造全能電商網站</h3>
@@ -847,7 +1149,7 @@
                                         <p>RWD 響應式網頁設計</p>
                                     </div>
                                 </div>
-                                
+
                             </div>
 
                             <div class="d-flex flex-wrap">
@@ -895,15 +1197,15 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            
+
+
                         </div>
-                        
+
                         <div class="intro-btn-wrap">
                             <a href="/online-store-setup" class="hover-arrow-effect">看看開店祕技<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                    
+
 
                 </div>
             </div>
@@ -921,8 +1223,8 @@
                     </div>
                 </div>
                 <div class="intro-content-wrap mt-5 mt-lg-0 col-lg-6 col-12 d-flex align-items-center">
-                    
-                    
+
+
                     <div class="intro-content">
                         <div class="intro-content-h3">
                             <h3>支持海內外電商<br>金流、物流一次搞定</h3>
@@ -956,7 +1258,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                
+
                             </div>
 
                             <div class="d-flex flex-wrap">
@@ -1004,15 +1306,15 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            
+
+
                         </div>
-                        
+
                         <div class="intro-btn-wrap">
                             <a href="/online-store-setup" class="hover-arrow-effect">看看開店祕技<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                    
+
 
                 </div>
             </div>
@@ -1029,7 +1331,7 @@
                     </div>
                 </div>
                 <div class="intro-content-wrap mt-5 mt-lg-0 col-lg-6 col-12 d-flex align-items-center">
-                    
+
                     <div class="intro-content">
                         <div class="intro-content-h3">
                             <h3>刺激下單，創造回購<br>行銷導流、促購模組任你玩</h3>
@@ -1062,7 +1364,7 @@
                                         <p>社群直播購物系統</p>
                                     </div>
                                 </div>
-                                
+
                             </div>
 
                             <div class="d-flex flex-wrap">
@@ -1110,31 +1412,31 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            
+
+
                         </div>
-                        
+
                         <div class="intro-btn-wrap">
                             <a href="#" class="hover-arrow-effect">看更多優惠模組
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
-                    
+
 
                 </div>
-                   
 
-                
 
-               
 
-               
-    
+
+
+
+
+
             </div>
 
         </div>
-       
+
     </section>
 <!-- o2o全通路 -->
     <section class='intro-img-content'>
@@ -1147,8 +1449,8 @@
                     </div>
                 </div>
                 <div class="intro-content-wrap mt-5 mt-lg-0 col-lg-6 col-12 d-flex align-items-center">
-                    
-                    
+
+
                     <div class="intro-content">
                         <div class="intro-content-h3">
                             <h3>O2O 全通路無縫整併<br>輕鬆管理網店、門市以及其他通路</h3>
@@ -1182,7 +1484,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                
+
                             </div>
 
                             <div class="d-flex flex-wrap">
@@ -1230,15 +1532,15 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            
+
+
                         </div>
-                        
+
                         <div class="intro-btn-wrap">
                             <a href="/online-store-setup" class="hover-arrow-effect">了解更多全通路整合<i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                    
+
 
                 </div>
             </div>
@@ -1255,7 +1557,7 @@
                     <div class="features-list d-flex flex-wrap justify-content-center">
                         <div class="li-1">
                             <div class="img-wrap">
-                                <img class="lazy loaded" alt="強大庫存及訂單系統" data-ll-status="loaded" src="https://img.shoplineapp.com/media/image_clips/5efef5c3b774cf002ab000ce/original.png?1593767363">
+                                <img class="lazy loaded" alt="強大庫存及訂單系統" data-ll-status="loaded" src="./img/func-order.png">
                             </div>
                             <div class="li-1-h3">
                                 <h3>強大庫存及訂單系統</h3>
@@ -1266,7 +1568,7 @@
                         </div>
                         <div class="li-1">
                             <div class="img-wrap">
-                                <img class="lazy loaded" alt="即時化商店業績分析" data-ll-status="loaded" src="https://img.shoplineapp.com/media/image_clips/5efef5c4b774cf0027b00084/original.png?1593767364">
+                                <img class="lazy loaded" alt="即時化商店業績分析" data-ll-status="loaded" src="./img/func-sales.png">
                             </div>
                             <div class="li-1-h3">
                                 <h3>即時化商店業績分析</h3>
@@ -1277,7 +1579,7 @@
                         </div>
                         <div class="li-1">
                             <div class="img-wrap">
-                                <img class="lazy loaded" alt="多國語系、幣值切換" data-ll-status="loaded" src="https://img.shoplineapp.com/media/image_clips/5f34a2e10225e00039a716b9/original.png?1597285089">
+                                <img class="lazy loaded" alt="多國語系、幣值切換" data-ll-status="loaded" src="./img/func-laun.png">
                             </div>
                             <div class="li-1-h3">
                                 <h3>多國語系、幣值切換</h3>
@@ -1286,10 +1588,10 @@
                                 <p>想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
                             </div>
                         </div>
-                    
+
                         <div class="li-1">
                             <div class="img-wrap">
-                                <img class="lazy loaded" alt="專業顧問線上支援" data-ll-status="loaded" src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c4003c7aace6/original.png?1597285089">
+                                <img class="lazy loaded" alt="專業顧問線上支援" data-ll-status="loaded" src="./img/func-ask.png">
                             </div>
                             <div class="li-1-h3">
                                 <h3>專業顧問線上支援</h3>
@@ -1300,7 +1602,7 @@
                         </div>
                         <div class="li-1">
                             <div class="img-wrap">
-                                <img class="lazy loaded" alt="廣告行銷加值服務" data-ll-status="loaded" src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c472e47aa8e9/original.png?1597285089">
+                                <img class="lazy loaded" alt="廣告行銷加值服務" data-ll-status="loaded" src="./img/func-marcom.png">
                             </div>
                             <div class="li-1-h3">
                                 <h3>廣告行銷加值服務</h3>
@@ -1311,7 +1613,7 @@
                         </div>
                         <div class="li-1">
                             <div class="img-wrap">
-                                <img class="lazy loaded" alt="老闆專屬成長社群" data-ll-status="loaded" src="https://img.shoplineapp.com/media/image_clips/5f34a2e16200760045e6138f/original.png?1597285089">
+                                <img class="lazy loaded" alt="老闆專屬成長社群" data-ll-status="loaded" src="./img/func-social.png">
                             </div>
                             <div class="li-1-h3">
                                 <h3>老闆專屬成長社群</h3>
@@ -1324,7 +1626,7 @@
                 </div>
             </div>
         </div>
-        
+
     </section>
     <!-- 人氣品牌推薦 -->
     <section class="home-showcase">
@@ -1351,8 +1653,8 @@
                     <div class="showcase-brands-img">
                         <img src="./img/light-logo.png" alt="">
                     </div>
-                    
-                    
+
+
                 </div>
                 <!-- bonny圖文 -->
                 <div class="showcase-list-wrap">
@@ -1386,24 +1688,175 @@
                         </div>
 
                     </div>
-                
-                    
+
+
 
                 </div>
-            
+
             </div>
         </div>
-        
+
     </section>
     <!-- 全亞洲 -->
+    <footer class="footer-revamp">
+        <div class="footer-map">
+          <div class="footer-content">
+            <h4>全亞洲超過<br><span class="count-animate">250,000</span> 個品牌都在使用 SHOPLINE</h4>
+            <a href="#"><span>免費試用 14 天</span><i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="footer-map-img">
+              <img src="./img/earth.png" alt="">
 
-    
+          </div>
+        </div>
+        <div class="footer-list-wrap">
+          <div class="footer-col">
+              <div class="footer-col-line d-flex justify-content-between align-items-center" >
+                <h4>SHOPLINE</h4><i class="fas fa-chevron-down"></i>
+              </div>
+
+            <ul class="footer-nav">
+              <li class="nav-item"><a class="nav-link" href="#">關於我們</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">認識團隊</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">人才招募</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">合作機會</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">精選夥伴</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">媒體報導</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-line d-flex justify-content-between align-items-center" >
+                <h4>我要開店</h4><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul class="footer-nav">
+              <li class="nav-item"><a class="nav-link" href="/about/pricing">方案費用</a></li>
+              <li class="nav-item"><a class="nav-link" href="/about/pricing/module">功能模組</a></li>
+              <li class="nav-item"><a class="nav-link" href="/showcase">客戶案例</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://seminar.shopline.tw" target="_blank">開店說明會</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://consultation.shopline.tw" target="_blank">開店諮詢</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-line d-flex justify-content-between align-items-center" >
+                <h4>功能特色</h4><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul class="footer-nav">
+              <li class="nav-item"><a href="/features/online-store" class="nav-link">網路開店</a></li>
+              <li class="nav-item"><a href="/social-commerce/features" class="nav-link">社群購物</a></li>
+              <li class="nav-item"><a class="nav-link" href="/pos/features">零售 POS</a></li>
+              <li class="nav-item"><a class="nav-link" href="/features/logistics">電商物流</a></li>
+              <li class="nav-item"><a class="nav-link" href="/features/order-management">訂單管理</a></li>
+              <li class="nav-item"><a class="nav-link" href="/features/landing-page">一頁商店</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-line d-flex justify-content-between align-items-center" >
+                <h4>開店資源</h4><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul class="footer-nav">
+              <li class="nav-item"><a class="nav-link" href="/online-store-setup">開店秘技</a></li>
+              <li class="nav-item"><a class="nav-link" href="/templates">版型主題</a></li>
+              <li class="nav-item"><a class="nav-link" href="/faq/overview">新手問答</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://pos.shopline.tw/functioncase/hardware/" target="_blank">POS 硬體</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-line d-flex justify-content-between align-items-center" >
+                <h4>更多解決方案</h4><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul class="footer-nav">
+              <li class="nav-item"><a class="nav-link" href="/enterprise">企業旗艦方案</a></li>
+              <li class="nav-item"><a class="nav-link" href="/cross-border">跨境電商方案</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://marketing.shoplineapp.com/?utm_source=shopline&amp;utm_medium=shopline-footer&amp;utm_campaign=ads-project" target="_blank">廣告計畫方案</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-line d-flex justify-content-between align-items-center" >
+                <h4>其他資源</h4><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul class="footer-nav">
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">電商教室</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">充電工作坊</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">DreamBig 創品牌</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">電商成長學苑</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">LINE 官方帳號</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-col-line d-flex justify-content-between align-items-center" >
+                <h4>應用案例</h4><i class="fas fa-chevron-down"></i>
+            </div>
+            <ul class="footer-nav">
+              <li class="nav-item is-hidden"><a class="nav-link">金流與物流</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://consultation.shopline.tw/pos" target="_blank">實體零售</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://marketing.shopline.tw/o2o-plan" target="_blank">O2O 全通路</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://marketing.shopline.tw/social-commerce" target="_blank">社交商務</a></li>
+              <li class="nav-item"><a class="nav-link" href="https://marketing.shopline.tw/facebook-integration-features" target="_blank">社群電商工具包</a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-col-full">
+            <div class="covid-19-wrap">
+              <a href="#">COVID-19 應變措施</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom-wrap">
+          <div class="footer-siteinfo footer-siteinfo-link">
+            <ul class="nav nav-siteinfo">
+              <li class="nav-item"><a class="nav-link" href="/about/sitemap">網站地圖</a></li>
+              <li class="nav-item"><a class="nav-link" href="/about/privacy">隱私權政策</a></li>
+              <li class="nav-item"><a class="nav-link" href="/about/terms">會員條款</a></li>
+            </ul>
+          </div>
+          <div class="footer-siteinfo footer-siteinfo-social d-flex">
+            <div class="button-group">
+              <a href="#" target="_blank">
+                <div class="icons-facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+              </a>
+              <a href="#" target="_blank">
+                <div class="icons-linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+              </a>
+              <a href="#" target="_blank">
+                <div class="icons-instagram">
+                    <i class="fab fa-instagram"></i>
+                </div>
+              </a>
+              <a href="#" target="_blank">
+                <div class="icons-youtube">
+                    <i class="fab fa-youtube"></i>
+                </div>
+              </a>
+              <a href="#" target="_blank">
+                <div class="icons-brand">
+                    <i class="far fa-comment-dots"></i>
+                </div>
+              </a>
+              <a href="#">
+                <div class="icons-mail">
+                    <i class="far fa-envelope"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="footer-siteinfo footer-siteinfo-copyright">
+            <div class="copyright">服務時間 星期一至五 上午 10 點至晚上 7 點<br>© Copyright 2013-21 SHOPLINE Limited.</div>
+          </div>
+        </div>
+        </div>
+        </footer>
+
+
+
 
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    
+
 </body>
 </html>
