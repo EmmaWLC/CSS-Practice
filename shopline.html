@@ -41,14 +41,82 @@
                 padding-left: 35px;
                 padding-right: 35px;
             }
+            nav {
+                position: fixed;
+                top: 0px;
+                position: fixed;
+                width: 100%;
+                box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.13);
+                z-index: 5;
+            
+            }
+            nav.white {
+                background-color: #fff;
+                height: 200px;
+            }
+            .nav-wrap {
+                height: 80px;
+                background-color: #fff;
+                z-index: 1;
+            }
+            .nav-shopline-logo {
+                width: 140px;
+            }
 
+            .nav-shopline-logo img{
+                width: 100%;
 
+            }
 
+            .nav-links-a{
+                color: #324354;
+                display: inline;
+                margin: 10px;
+
+            }
+
+            .nav-links-a a, .nav-links-a i {
+                color: #324354;
+                text-decoration: none;
+            }
+
+            .nav-btn {
+                width: 100px;
+                height: 40px;
+                /* text-align: center; */
+                /* .nav-btn-a 中寫了d-flex上面的屬性就會無效嗎？ */
+                border-radius: 20px;
+                background-color: #0261FF;
+                padding: 3 12px;
+            }
+
+            .nav-btn-a {
+                width: 100%;
+                height: 100%;
+
+            }
+
+            .nav-btn a{
+                text-decoration: none;
+                color: #fff;
+                font-size: .9rem;
+            }
+
+            .nav-burger a{
+                font-size: 25px;
+                color: #324354;
+
+            }
+
+            .nav-burger i{
+                width: 100%;
+                color: #324354;
+            }
         }
 
 
         @media screen and ( min-width: 992px){
-            nav .row .dark-bar, nav .nav-wrap .nav-links, nav .nav-btn{
+            nav .nav-wrap .nav-links,nav .nav-btn{
                 display: block;
             }
 
@@ -63,9 +131,41 @@
             .nav-wrap {
                 padding-left: 25px;
                 padding-right: 25px;
-                /* padding-top: 40px; */
             }
 
+            nav .row .dark-bar {
+                display: flex;
+                background-color: #000E2B;
+                width: 100%;
+                height: 40px;
+                color: white;
+                padding-right: auto;
+                justify-content: flex-end;
+                align-items: center;
+                padding-left: calc(0.1975 * 100vw - 196.2px);
+                padding-right: calc(0.1975 * 100vw - 196.2px);
+            }
+
+            nav .row .dark-bar a{
+                color: white;
+            }
+
+            .dark-bar-i {
+                padding: 0px 0px 0px 0px;
+            }
+            .dark-bar-a1 {
+                padding: 0px 20px 0px 20px;
+                margin: 0px 0px 0px 20px;
+                border-left: 1px solid #fff;
+                font-size: .8rem;
+                font-weight: 200;
+            }
+            .dark-bar-a {
+                font-size: .8rem;
+                font-weight: 200;
+            }
+
+            
         }
 
         @media screen and ( min-width: 1120px){
@@ -80,97 +180,16 @@
 
         }
 
-        nav {
-            position: fixed;
-            top: 0px;
-            position: fixed;
-            width: 100%;
-            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.13);
-            z-index: 5;
-            /* 如果不下這行要怎麼寫 */
-        }
-
-
-
-        nav.white {
-            background-color: #fff;
-            height: 200px;
-        }
-
-
-        .nav-wrap {
-            height: 80px;
-            background-color: #fff;
-            z-index: 1;
-        }
-
-        .dark-bar {
-            background-color: #000E2B;
-            width: 100%;
-            height: 40px;
-        }
+        
 
 
         .banner-wrap {
-            padding-left: calc(2.5%);
+            padding-left: calc(6%);
 
         }
 
         /* nav shopline logo */
-        .nav-shopline-logo {
-            width: 140px;
-
-        }
-
-        .nav-shopline-logo img{
-            width: 100%;
-
-        }
-
-        .nav-links-a{
-            color: #324354;
-            display: inline;
-            margin: 10px;
-
-        }
-
-        .nav-links-a a, .nav-links-a i {
-            color: #324354;
-            text-decoration: none;
-        }
-
-        .nav-btn {
-            width: 100px;
-            height: 40px;
-            /* text-align: center; */
-            /* .nav-btn-a 中寫了d-flex上面的屬性就會無效嗎？ */
-            border-radius: 20px;
-            background-color: #0261FF;
-            padding: 3 12px;
-        }
-
-        .nav-btn-a {
-            width: 100%;
-            height: 100%;
-
-        }
-
-        .nav-btn a{
-            text-decoration: none;
-            color: #fff;
-            font-size: .9rem;
-        }
-
-        .nav-burger a{
-            font-size: 25px;
-            color: #324354;
-
-        }
-
-        .nav-burger i{
-            width: 100%;
-            color: #324354;
-        }
+       
 
 
         /* banner css */
@@ -233,7 +252,7 @@
                 width: 100%;
             }
             .form-wrapper input{
-                width: calc(100vw - 90px);
+                width: calc(100vw - 100px);
                 background: unset;
                 /* 這是讓input沒有預設樣式的寫法 */
                 border: 1px solid #fff;
@@ -283,7 +302,7 @@
 
 
             .form-input input{
-                width: calc(50vw - 80px);
+                width: calc(50vw - 100px);
                 background: unset;
                 /* 這是讓input沒有預設樣式的寫法 */
                 border: 1px solid #fff;
@@ -480,41 +499,53 @@
             font-weight: normal;
         }
 
-        .li-1 {
-            padding: 40px;
-        }
-
-
-
+        
         @media screen and ( min-width: 0px){
             .li-1-p {
-                width: 200px;
+                width: 160px;
                 margin: 0;
                 text-align: justify;
-                font-size: 16px;
+                font-size: 80%;
                 line-height: 2rem;
             }
 
             .li-1 {
-                margin: 0px 30px 0px;
+                margin-right: calc(25% - 100px);
+                margin-left: calc(25% - 100px);
+                margin-top: 10px;
+                padding: calc(10% - 90px);
+            }
+
+            .features-list .img-wrap {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 30px;
+                border-radius: 50%;
+                background-color: #fff;
+                margin: 0 auto 20px;
+                box-shadow: 0 0 12px rgb(36 50 66 / 20%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .features-list .img-wrap img {
+                width: 60%;
             }
 
         }
 
-        @media screen and ( min-width: 870px){
 
+        @media screen and ( min-width: 992px){
             .features-wrap {
                 max-width: 1200px;
             }
             .li-1 {
-                margin: 0px;
+                margin-right: 30px;
+                margin-left: 30px;
+                padding: 10px;
+            
             }
-
-
-
-        }
-
-        @media screen and ( min-width: 992px){
             .li-1-p {
                 width: 300px;
                 margin: 0;
@@ -525,28 +556,10 @@
 
         }
 
-        .features-list {
-            width: 100%;
-            /* margin: 0px -30px 0px 0px; */
-        }
+        
 
 
-        .features-list .img-wrap {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 30px;
-            border-radius: 50%;
-            background-color: #fff;
-            margin: 0 auto 20px;
-            box-shadow: 0 0 12px rgb(36 50 66 / 20%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .features-list .img-wrap img {
-            width: 60%;
-        }
+       
 
 
         /* 人氣品牌推薦 */
@@ -973,6 +986,20 @@
             
             
         }
+        @media screen and (min-width: 768px){
+            .footer-map {
+                padding-top: 50px;
+                padding-bottom: 50px;
+                background-position: -300px -35px;
+            }
+            .footer-map .footer-content {
+                padding-left: 35px;
+                padding-right: 35px;
+                padding-top: 0px;
+            }
+
+        }
+            
 
 
         @media screen and ( min-width: 992px){
@@ -1000,6 +1027,12 @@
                 flex-wrap: wrap;
                 border-width: 1px 0;
                 position: relative;
+            }
+            .footer-map .footer-content {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 0px;
+                width: 100%;
             }
             .footer-col:not(.footer-siteinfo):not(.footer-col-full) {
                 border-bottom: 0;
@@ -1037,7 +1070,7 @@
                 color: #748094;
             }
 
-            .fa-chevron-down {
+            footer .fa-chevron-down {
                 display: none;
             }
             .footer-col-full {
@@ -1087,6 +1120,10 @@
             padding-left: calc(0.1975 * 100vw - 196.2px);
             padding-right: calc(0.1975 * 100vw - 196.2px);
             }
+            .footer-map .footer-content {
+                padding-left: calc(0.1975 * 100vw - 196.2px);
+                padding-right: calc(0.1975 * 100vw - 196.2px);
+            }
     }
 
     </style>
@@ -1098,9 +1135,23 @@
    <nav>
        <div class="container-fluid">
            <div class="row">
-               <div class="dark-bar">
-
-               </div>
+               
+                <div class="dark-bar">
+                    <div class="dark-bar-i">
+                        <i class="fas fa-globe"></i>
+                    </div>  
+                    <div class="dark-bar-a1">
+                        <a href="#">幫助中心</a>
+                    </div>
+                    <div class="dark-bar-a">
+                        <a href="#">登入網店</a>
+                    </div>
+                   
+                    
+                    
+                </div>
+              
+               
            </div>
        </div>
 
