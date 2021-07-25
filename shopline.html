@@ -831,6 +831,13 @@
                 line-height: 1;
                 font-weight: 300;
             }
+
+            .footer-col-line {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
             .footer-revamp ul {
                 list-style: none;
                 padding: 0;
@@ -858,12 +865,13 @@
             }
 
             .footer-bottom-wrap {
+                
                 display: flex;
                 justify-content: space-between;
-                align-items: left;
                 flex-direction: column;
                 color: #fff;
-                margin-bottom: 95px;
+                padding-bottom: 95px;
+                
             }
             .footer-siteinfo .button-group {
                 margin-bottom: 0;
@@ -873,7 +881,6 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                
             }
 
             .footer-siteinfo {
@@ -883,8 +890,21 @@
                 margin-top: 25px;
                 display: flex;
                 flex-wrap: wrap;
+                
             }
 
+            .footer-siteinfo-link {
+                order: 2;
+            }
+
+            .footer-siteinfo-social{
+                order: 1;
+            }
+
+            .footer-siteinfo-copyright {
+                order: 3;
+            }
+           
             .footer-siteinfo .button-group a {
                 width: 36px;
                 height: 36px;
@@ -943,13 +963,132 @@
                 left: 0px;
                 transform: translateY(-50%);
             }
-            .footer-bottom-wrap {
+            .footer-siteinfo .copyright {
+                margin-bottom: 0;
+                text-align: left;
+                color: #748094;
+            }
+
+
+            
+            
+        }
+
+
+        @media screen and ( min-width: 992px){
+
+            .footer-map {
+                padding-top: 50px;
+                padding-bottom: 50px;
+                background-position: -300px -35px;
+            }
+
+            .footer-col .nav-item {
+                display: block;
+
+            }
+            .footer-list-wrap, .footer-bottom-wrap, .footer-lang-wrap {
+                padding-left: 25px;
+                padding-right: 25px;
+                padding-bottom: 80px;
+            }
+            .footer-list-wrap {
+                padding-top: 80px;
+                margin-bottom: 45px;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                border-width: 1px 0;
+                position: relative;
+            }
+            .footer-col:not(.footer-siteinfo):not(.footer-col-full) {
+                border-bottom: 0;
+                position: static;
+                min-width: 0;
+            }
+            .footer-siteinfo {
+                font-size: 87.5%;
+                line-height: 1.7;
+            }
+            .copyright {
+                letter-spacing: 0.5px;
+                margin-bottom: 23px;
+            }
+           
+            .footer-col-line {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .footer-col h4 {
+                margin-bottom: 45px;
+                cursor: default;
+                padding: 0;
+                line-height: 1.2;
+            }
+           
+            .footer-nav li {
+                padding-left: 0;
+                margin-bottom: 15px;
                 
-                flex-direction: column;
-                color: #fff;
-                margin-bottom: 95px;
+            }
+            .footer-revamp .nav-link {
+                padding: 0;
+                color: #748094;
+            }
+
+            .fa-chevron-down {
+                display: none;
+            }
+            .footer-col-full {
+                width: 100%;
+                text-align: right;
+                margin-top: 90px;
+            }
+
+            
+            .footer-list-wrap:after {
+                display: block;
+            }
+            .footer-list-wrap:after, .footer-list-wrap:before {
+                content: '';
+                width: calc(100% - (25px * 2));
+                height: 1px;
+                background: #172B4D;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 25px;
+            }
+            .footer-bottom-wrap {
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+            .footer-siteinfo-link, .footer-siteinfo-social, .footer-siteinfo-copyright {
+                order: unset;
+            }
+            .footer-revamp {
+                padding-bottom: 50px;
+            }
+
+            .footer-siteinfo .nav-siteinfo li {
+                padding: 0px 10px 0px;
+            }
+            .footer-siteinfo .nav-siteinfo li:nth-child(1) {
+                padding: 0px 10px 0px 0px;
             }
         }
+
+        @media screen and (min-width: 1121px){
+
+            .footer-list-wrap, .footer-bottom-wrap, .footer-lang-wrap {
+            padding-left: calc(0.1975 * 100vw - 196.2px);
+            padding-right: calc(0.1975 * 100vw - 196.2px);
+        }
+       
+        
 
        
 
@@ -1067,7 +1206,7 @@
 
                             <div class="form-btn-bg d-flex justify-content-center align-items-center">
                                 <div class="form-btn">
-                                    <a href='#'class="banner-free-btn">免費試用</a>
+                                    <a href="#" class="banner-free-btn">免費試用</a>
                                 </div>
 
                             </div>
@@ -1725,15 +1864,15 @@
             </ul>
           </div>
           <div class="footer-col">
-            <div class="footer-col-line d-flex justify-content-between align-items-center" >
+            <div class="footer-col-line" >
                 <h4>我要開店</h4><i class="fas fa-chevron-down"></i>
             </div>
             <ul class="footer-nav">
-              <li class="nav-item"><a class="nav-link" href="/about/pricing">方案費用</a></li>
-              <li class="nav-item"><a class="nav-link" href="/about/pricing/module">功能模組</a></li>
-              <li class="nav-item"><a class="nav-link" href="/showcase">客戶案例</a></li>
-              <li class="nav-item"><a class="nav-link" href="https://seminar.shopline.tw" target="_blank">開店說明會</a></li>
-              <li class="nav-item"><a class="nav-link" href="https://consultation.shopline.tw" target="_blank">開店諮詢</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">方案費用</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">功能模組</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">客戶案例</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">開店說明會</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">開店諮詢</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -1741,12 +1880,12 @@
                 <h4>功能特色</h4><i class="fas fa-chevron-down"></i>
             </div>
             <ul class="footer-nav">
-              <li class="nav-item"><a href="/features/online-store" class="nav-link">網路開店</a></li>
-              <li class="nav-item"><a href="/social-commerce/features" class="nav-link">社群購物</a></li>
-              <li class="nav-item"><a class="nav-link" href="/pos/features">零售 POS</a></li>
-              <li class="nav-item"><a class="nav-link" href="/features/logistics">電商物流</a></li>
-              <li class="nav-item"><a class="nav-link" href="/features/order-management">訂單管理</a></li>
-              <li class="nav-item"><a class="nav-link" href="/features/landing-page">一頁商店</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">網路開店</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">社群購物</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">零售 POS</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">電商物流</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">訂單管理</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">一頁商店</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -1754,10 +1893,10 @@
                 <h4>開店資源</h4><i class="fas fa-chevron-down"></i>
             </div>
             <ul class="footer-nav">
-              <li class="nav-item"><a class="nav-link" href="/online-store-setup">開店秘技</a></li>
-              <li class="nav-item"><a class="nav-link" href="/templates">版型主題</a></li>
-              <li class="nav-item"><a class="nav-link" href="/faq/overview">新手問答</a></li>
-              <li class="nav-item"><a class="nav-link" href="https://pos.shopline.tw/functioncase/hardware/" target="_blank">POS 硬體</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">開店秘技</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">版型主題</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">新手問答</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">POS 硬體</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -1765,9 +1904,9 @@
                 <h4>更多解決方案</h4><i class="fas fa-chevron-down"></i>
             </div>
             <ul class="footer-nav">
-              <li class="nav-item"><a class="nav-link" href="/enterprise">企業旗艦方案</a></li>
-              <li class="nav-item"><a class="nav-link" href="/cross-border">跨境電商方案</a></li>
-              <li class="nav-item"><a class="nav-link" href="https://marketing.shoplineapp.com/?utm_source=shopline&amp;utm_medium=shopline-footer&amp;utm_campaign=ads-project" target="_blank">廣告計畫方案</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">企業旗艦方案</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">跨境電商方案</a></li>
+              <li class="nav-item"><a class="nav-link" href="#"   target="_blank">廣告計畫方案</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -1788,10 +1927,10 @@
             </div>
             <ul class="footer-nav">
               <li class="nav-item is-hidden"><a class="nav-link">金流與物流</a></li>
-              <li class="nav-item"><a class="nav-link" href="https://consultation.shopline.tw/pos" target="_blank">實體零售</a></li>
-              <li class="nav-item"><a class="nav-link" href="https://marketing.shopline.tw/o2o-plan" target="_blank">O2O 全通路</a></li>
-              <li class="nav-item"><a class="nav-link" href="https://marketing.shopline.tw/social-commerce" target="_blank">社交商務</a></li>
-              <li class="nav-item"><a class="nav-link" href="https://marketing.shopline.tw/facebook-integration-features" target="_blank">社群電商工具包</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">實體零售</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">O2O 全通路</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">社交商務</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">社群電商工具包</a></li>
             </ul>
           </div>
           <div class="footer-col footer-col-full">
@@ -1803,9 +1942,9 @@
         <div class="footer-bottom-wrap">
           <div class="footer-siteinfo footer-siteinfo-link">
             <ul class="nav nav-siteinfo">
-              <li class="nav-item"><a class="nav-link" href="/about/sitemap">網站地圖</a></li>
-              <li class="nav-item"><a class="nav-link" href="/about/privacy">隱私權政策</a></li>
-              <li class="nav-item"><a class="nav-link" href="/about/terms">會員條款</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">網站地圖</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">隱私權政策</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">會員條款</a></li>
             </ul>
           </div>
           <div class="footer-siteinfo footer-siteinfo-social d-flex">
@@ -1847,7 +1986,7 @@
           </div>
         </div>
         </div>
-        </footer>
+    </footer>
 
 
 
